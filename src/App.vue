@@ -1,23 +1,21 @@
 <template>
   <div id="app">
+    <img src="http://www.0351zhuangxiu.com/uploads/images/123.jpg" alt="">
     <hello></hello>
-    <world></world>
   </div>
 </template>
 
 <script>
   import hello from './components/hello';
-  import world from './components/world';
   export default {
     data () {
       return {
-        a: 123
+        name: 'app'
       }
     },
 
     components: {
-      hello,
-      world
+      hello
     },
 
     created () {

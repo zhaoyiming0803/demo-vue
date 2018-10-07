@@ -1,14 +1,12 @@
 <template>
-  <div>
-    hello
-  </div>
+  <div>hello</div>
 </template>
 
 <script scoped type="ecmascript-6">
   export default {
     data () {
       return {
-        hello: 'world'
+        name: 'hello'
       }
     },
 
