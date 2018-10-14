@@ -1,7 +1,8 @@
 <template>
-  <div id="app">
+  <div class="root-container">
     <img src="http://www.0351zhuangxiu.com/uploads/images/123.jpg" alt="">
-    <hello></hello>
+    <div>div1</div>
+    <div>div2</div>
   </div>
 </template>
 
@@ -12,10 +13,6 @@
       return {
         name: 'app'
       }
-    },
-
-    components: {
-      hello
     },
 
     created () {
