@@ -11,7 +11,13 @@ window.Vue = Vue;
 /* eslint-disable no-new */
 window.vm = new Vue({
   el: '#app',
-  render (createElement) {
-    return createElement(App);
+  render (h) {
+    // return h('div', {
+    //   style: {
+    //     color: 'red'
+    //   }
+    // }, 'hello world');
+
+    return h(App);
   }
 })

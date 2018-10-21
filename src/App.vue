@@ -1,8 +1,6 @@
 <template>
   <div class="root-container">
-    <img src="http://www.0351zhuangxiu.com/uploads/images/123.jpg" alt="">
-    <div>div1</div>
-    <div>div2</div>
+    <span>123</span>
   </div>
 </template>
 
@@ -11,7 +9,7 @@
   export default {
     data () {
       return {
-        name: 'app'
+        placeholder: 'zhaoyiming'
       }
     },
 
