@@ -8,16 +8,16 @@
   export default {
     data () {
       return {
-        hello: 'world'
+        placeholder: 'hello'
       }
     },
 
     created () {
-
+      console.log('hello.vue created');
     },
 
     mounted () {
-      
+      console.log('hello.vue mounted');
     }
   }
 </script>

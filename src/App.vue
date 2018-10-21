@@ -1,7 +1,6 @@
 <template>
-  <div id="app">
+  <div class="root-container">
     <hello></hello>
-    <world></world>
   </div>
 </template>
 
@@ -11,7 +10,7 @@
   export default {
     data () {
       return {
-        a: 123
+        placeholder: 'App'
       }
     },
 
@@ -21,11 +20,11 @@
     },
 
     created () {
-      
+      console.log('app.vue created');
     },
 
     mounted () {
-      
+      console.log('app.vue mounted');
     }
   }
 </script>
