@@ -1,6 +1,8 @@
 <template>
   <div>
-    hello
+    
+    <div v-for="(v, k) in list" :key="k">{{v}}</div>
+
   </div>
 </template>
 
@@ -8,16 +10,16 @@
   export default {
     data () {
       return {
-        placeholder: 'hello'
+        name: 'hello',
+        list: [1, 2, 3]
       }
     },
 
-    created () {
-      console.log('hello.vue created');
-    },
-
     mounted () {
-      console.log('hello.vue mounted');
-    }
+      // setInterval(() => {
+      //   this.list.push.apply(this.list, [0, 0, 0, '---------']);
+      //   //this.list = this.list.concat([0, 0, 0, '-------']);
+      // }, 1000);
+    },
   }
 </script>
