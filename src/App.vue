@@ -1,7 +1,6 @@
 <template>
-  <div id="app">
+  <div class="app-container">
     <hello></hello>
-    <world></world>
   </div>
 </template>
 
@@ -11,7 +10,7 @@
   export default {
     data () {
       return {
-        a: 123
+        name: 'APP'
       }
     },
 

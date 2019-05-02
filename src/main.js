@@ -6,14 +6,12 @@ import { create } from 'domain';
 
 Vue.config.productionTip = false
 
-window.Vue = Vue;
-
 /* eslint-disable no-new */
-window.vm = new Vue({
+const vm = new Vue({
   el: '#app',
   data () {
     return {
-      a: 'aaa'
+      name: 'Main'
     }
   },
   // components: {
@@ -41,24 +39,26 @@ window.vm = new Vue({
   //   )
   // }
 
-  render (createElement) {
-    const _this = this;
-    return createElement('div', [
-      createElement('div', {
-        style: {
-          color: 'red'
-        },
-        on: {
-          click: () => {
-            console.log(this);
-          }
-        }
-      }, this.a),
-      createElement('div', {
-        style: {
-          color: 'blue'
-        }
-      }, '2')
-    ]);
-  }
+  // render (createElement) {
+  //   const _this = this;
+  //   return createElement('div', [
+  //     createElement('div', {
+  //       style: {
+  //         color: 'red'
+  //       },
+  //       on: {
+  //         click: () => {
+  //           console.log(this);
+  //         }
+  //       }
+  //     }, this.a),
+  //     createElement('div', {
+  //       style: {
+  //         color: 'blue'
+  //       }
+  //     }, '2')
+  //   ]);
+  // }，
+
+  render: h => h(App)
 })

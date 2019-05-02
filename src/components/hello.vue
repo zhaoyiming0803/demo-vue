@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="hello-container">
     hello
   </div>
 </template>
@@ -8,7 +8,7 @@
   export default {
     data () {
       return {
-        hello: 'world'
+        name: 'Hello'
       }
     },
 
