@@ -1,30 +1,33 @@
 <template>
   <div class="app-container">
-    <hello></hello>
+    <div>{{num}}</div>
+    <div>{{num + 1}}</div>
+    <button @click="change">change</button>
   </div>
 </template>
 
 <script>
-  import hello from './components/hello';
-  import world from './components/world';
   export default {
     data () {
       return {
-        name: 'APP'
+        num: 1
       }
     },
 
-    components: {
-      hello,
-      world
+    watch: {
+      // watch 一个数据时，再次改变其值，会触发无限更新
+      // 为了避免浏览器卡死，Vue 做了限制，最终提示：infinite update loop
+      // num (newVal, oldVal) {
+      //   this.num = Math.random();
+      // }
     },
 
-    created () {
-      
-    },
-
-    mounted () {
-      
+    methods: {
+      change () {
+        for (let i = 0; i < 10; i += 1) {
+          this.num = Math.random();
+        }
+      }
     }
   }
 </script>
