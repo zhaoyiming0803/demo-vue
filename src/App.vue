@@ -1,30 +1,44 @@
 <template>
   <div class="app-container">
-    <hello></hello>
+    <div>c: {{c}}</div>
+    <div>d:{{d}}</div>
+    <button @click="resetA">重置a</button>
+    <button @click="resetD">重置d</button>
   </div>
 </template>
 
 <script>
-  import hello from './components/hello';
-  import world from './components/world';
   export default {
     data () {
       return {
-        name: 'APP'
+        a: 1,
+        b: 2
       }
     },
 
-    components: {
-      hello,
-      world
+    computed: {
+      c () {
+        return this.a + this.b;
+      },
+
+      d: {
+        get () {
+          return this.a + this.b;
+        },
+        set () {
+          console.log('正在执行计算属性 d 的自定义 set 方法');
+        }
+      }
     },
 
-    created () {
-      
-    },
+    methods: {
+      resetA () {
+        this.a = Math.random();
+      },
 
-    mounted () {
-      
+      resetD () {
+        this.d = 1234;
+      }
     }
   }
 </script>
