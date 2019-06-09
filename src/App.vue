@@ -1,6 +1,8 @@
 <template>
   <div class="app-container">
+    <hello :message="message" :content="content" :test="test"></hello>
     <hello :message="message" :content="content"></hello>
+    <button @click="switchHello">切换hello组件</button>
   </div>
 </template>
 
@@ -10,13 +12,29 @@
   export default {
     data () {
       return {
+        isShowTest: true,
         message: 'hello world',
-        content: {}
+        content: {},
+        formData: {},
+        test: 'test'
       }
     },
 
     components: {
       Hello
+    },
+
+    mounted () {
+      console.log(this.$parent);
+    },
+
+    methods: {
+      switchHello () {
+        this.isShowTest = false;
+        this.$nextTick(() => {
+          this.test = undefined;
+        });
+      }
     }
   }
 </script>

@@ -14,6 +14,22 @@
       content: {
         type: [Object, Array],
         required: true
+      },
+      // Invalid default value for prop "formData": 
+      // Props with type Object/Array must use a factory function to return the default value.
+      // formData: {
+      //   type: Object,
+      //   default: {}
+      // },
+      test: {
+        type: String,
+        default () {
+          return '';
+        },
+        //  Invalid prop: custom validator check failed for prop "test".
+        // validator (value) {
+        //   return ['small', 'middle', 'large'].includes(value);
+        // }
       }
     },
 
@@ -21,14 +37,6 @@
       return {
         name: 'Hello'
       }
-    },
-
-    created () {
-
-    },
-
-    mounted () {
-      
     }
   }
 </script>
