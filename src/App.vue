@@ -1,23 +1,22 @@
 <template>
   <div class="app-container">
-    <div>{{message}}</div>
-    <div>{{reservedMessage}}</div>
-    <input type="text" v-model="message">
+    <hello :message="message" :content="content"></hello>
   </div>
 </template>
 
 <script>
+  import Hello from './components/hello';
+
   export default {
     data () {
       return {
-        message: 'hello vue'
+        message: 'hello world',
+        content: {}
       }
     },
 
-    computed: {
-      reservedMessage () {
-        return this.message.split('').reverse().join('');
-      }
+    components: {
+      Hello
     }
   }
 </script>
