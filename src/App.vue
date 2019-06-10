@@ -2,6 +2,7 @@
   <div class="app-container">
     <div>c: {{c}}</div>
     <div>d:{{d}}</div>
+    <input type="text" v-model="d">
     <button @click="resetA">重置a</button>
     <button @click="resetD">重置d</button>
   </div>
