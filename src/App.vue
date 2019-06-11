@@ -1,6 +1,7 @@
 <template>
   <div class="app-container">
-    <hello></hello>
+    <input type="text" v-model="person.age">
+    <div>{{message}}</div>
   </div>
 </template>
 
@@ -10,21 +11,26 @@
   export default {
     data () {
       return {
-        name: 'APP'
+        person: {
+          age: 1,
+          skill: ['code']
+        }
       }
     },
 
-    components: {
-      hello,
-      world
+    watch: {
+      'person.age' (n, o) {
+        console.log('age最新值：' + o);
+      },
+      'skill["code"]' (n, o) {
+        console.log('skill最新值：' + n);
+      }
     },
 
-    created () {
-      
-    },
-
-    mounted () {
-      
+    computed: {
+      message () {
+        return '我今年' + this.person.age +　'岁';
+      }
     }
   }
 </script>
