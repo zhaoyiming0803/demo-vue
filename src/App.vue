@@ -37,11 +37,14 @@
         // for (let i = 0; i < 10; i += 1) {
         //   this.num = Math.random();
         // }
+
+        // 连续将多个 task 放到 microTask 队列中
         // for (let i = 0; i < 3; i += 1) {
         //   this.$nextTick(() => {
-        //     this.num = Math.random();
+        //     this.message = 'hello ' + Math.random();
         //   });
         // }
+
         this.num = Math.random();
         this.isShowHello = false;
       }
