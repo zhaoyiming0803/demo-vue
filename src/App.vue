@@ -1,16 +1,19 @@
 <template>
   <div class="app-container">
-    <div>{{num}}</div>
-    <div>{{num + 1}}</div>
+    <div ref="container">{{num}}</div>
+    <hello :message="message"></hello>
     <button @click="change">change</button>
   </div>
 </template>
 
 <script>
+  import Hello from './components/hello';
   export default {
     data () {
       return {
-        num: 1
+        num: 1,
+        message: 'hello world',
+        isShowHello: true
       }
     },
 
@@ -19,14 +22,28 @@
       // 为了避免浏览器卡死，Vue 做了限制，最终提示：infinite update loop
       // num (newVal, oldVal) {
       //   this.num = Math.random();
-      // }
+      // },
+      num (n, o) {
+        this.message = 'hello ' + n
+      }
+    },
+
+    components: {
+      Hello
     },
 
     methods: {
       change () {
-        for (let i = 0; i < 10; i += 1) {
-          this.num = Math.random();
-        }
+        // for (let i = 0; i < 10; i += 1) {
+        //   this.num = Math.random();
+        // }
+        // for (let i = 0; i < 3; i += 1) {
+        //   this.$nextTick(() => {
+        //     this.num = Math.random();
+        //   });
+        // }
+        this.num = Math.random();
+        this.isShowHello = false;
       }
     }
   }
