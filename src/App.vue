@@ -2,12 +2,12 @@
   <div class="app-container">
     <input type="text" v-model="person.age">
     <div>{{message}}</div>
+    <hello></hello>
   </div>
 </template>
 
 <script>
   import hello from './components/hello';
-  import world from './components/world';
   export default {
     data () {
       return {
@@ -31,6 +31,10 @@
       message () {
         return '我今年' + this.person.age +　'岁';
       }
+    },
+
+    components: {
+      hello
     }
   }
 </script>

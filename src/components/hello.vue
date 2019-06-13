@@ -1,6 +1,6 @@
 <template>
   <div class="hello-container">
-    hello
+    <div v-if="isShowMessage">{{message}}</div>
   </div>
 </template>
 
@@ -8,16 +8,15 @@
   export default {
     data () {
       return {
-        name: 'Hello'
+        isShowMessage: true,
+        message: 'hello'
       }
     },
 
-    created () {
-
-    },
-
     mounted () {
-      
+      setTimeout(() => {
+        this.isShowMessage = false;
+      }, 3000);
     }
   }
 </script>
