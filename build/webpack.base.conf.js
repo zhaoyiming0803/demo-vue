@@ -32,6 +32,14 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.less$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'less-loader'
+        ]
+      },
+      {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: vueLoaderConfig

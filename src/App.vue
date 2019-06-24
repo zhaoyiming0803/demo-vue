@@ -19,7 +19,6 @@
     </Modal>
 
     <Button type="primary" size="middle" v-if="!isShowModal" @click="showModal">显示模态框</Button>
-    
   </div>
 </template>
 
@@ -41,6 +40,8 @@
           mark: ''
         },
         isShowModal: false,
+        isShowAlert: false,
+        message: '',
         validateRules: {
           email: [
             { required: true, message: '邮箱不能为空',  trigger: 'blur' },
@@ -72,8 +73,9 @@
 
     methods: {
       submit () {
-        console.log(this.email);
-        console.log(this.upwd);
+        this.$Alert.error({
+          message: 'Hello World'
+        });
       },
 
       changeEmail (e) {
