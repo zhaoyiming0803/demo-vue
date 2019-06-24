@@ -2,63 +2,36 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-import { create } from 'domain';
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
-/* eslint-disable no-new */
-const vm = new Vue({
+Vue.mixin({
+  methods: {
+    dispatch (componentName, eventName, params) {
+      let parent = this.$parent || this.$root;
+      let name = parent.$options.name;
+
+      while (parent && (!name || name !== componentName)) {
+        parent = parent.$parent;
+        if (parent) {
+          name = parent.$options.name;
+        }
+      }
+
+      if (parent) {
+        parent.$emit.apply(parent, [eventName].concat(params));
+      }
+    }
+  }
+});
+
+
+new Vue({
   el: '#app',
   data () {
     return {
       name: 'Main'
     }
   },
-  // components: {
-  //   abc: {
-  //     render: (createElement) => {
-  //       return createElement('div', {
-  //         style: {
-  //           color: 'red',
-  //           fontSize: 30
-  //         }
-  //       }, '11111');
-  //     }
-  //   }
-  // },
-  //components: { App },
-  // render: function (createElement) {
-  //   return createElement('div',
-  //     Array.apply(null, { length: 20 }).map(function () {
-  //       return createElement('p', {
-  //         attrs: {
-  //           class: 'haha'
-  //         }
-  //       }, 'hi')
-  //     })
-  //   )
-  // }
-
-  // render (createElement) {
-  //   const _this = this;
-  //   return createElement('div', [
-  //     createElement('div', {
-  //       style: {
-  //         color: 'red'
-  //       },
-  //       on: {
-  //         click: () => {
-  //           console.log(this);
-  //         }
-  //       }
-  //     }, this.a),
-  //     createElement('div', {
-  //       style: {
-  //         color: 'blue'
-  //       }
-  //     }, '2')
-  //   ]);
-  // }，
-
   render: h => h(App)
 })
