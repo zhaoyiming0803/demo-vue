@@ -2,7 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-import { create } from 'domain';
+import router from './router';
 
 Vue.config.productionTip = false
 
@@ -14,51 +14,6 @@ const vm = new Vue({
       name: 'Main'
     }
   },
-  // components: {
-  //   abc: {
-  //     render: (createElement) => {
-  //       return createElement('div', {
-  //         style: {
-  //           color: 'red',
-  //           fontSize: 30
-  //         }
-  //       }, '11111');
-  //     }
-  //   }
-  // },
-  //components: { App },
-  // render: function (createElement) {
-  //   return createElement('div',
-  //     Array.apply(null, { length: 20 }).map(function () {
-  //       return createElement('p', {
-  //         attrs: {
-  //           class: 'haha'
-  //         }
-  //       }, 'hi')
-  //     })
-  //   )
-  // }
-
-  // render (createElement) {
-  //   const _this = this;
-  //   return createElement('div', [
-  //     createElement('div', {
-  //       style: {
-  //         color: 'red'
-  //       },
-  //       on: {
-  //         click: () => {
-  //           console.log(this);
-  //         }
-  //       }
-  //     }, this.a),
-  //     createElement('div', {
-  //       style: {
-  //         color: 'blue'
-  //       }
-  //     }, '2')
-  //   ]);
-  // }，
-
-  render: h => h(App)
+  render: h => h(App),
+  router
 })

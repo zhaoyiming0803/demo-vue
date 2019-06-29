@@ -1,6 +1,7 @@
 <template>
   <div class="hello-container">
     hello
+    <button @click="toWorld">去 world</button>
   </div>
 </template>
 
@@ -12,12 +13,12 @@
       }
     },
 
-    created () {
-
-    },
-
-    mounted () {
-      
+    methods: {
+      toWorld () {
+        this.$router.push({
+          name: 'World'
+        });
+      }
     }
   }
 </script>

@@ -1,6 +1,7 @@
 <template>
   <div>
     world
+    <img src="/static/images/logo.jpg" alt="">
   </div>
 </template>
 
