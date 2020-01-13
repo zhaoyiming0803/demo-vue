@@ -1,31 +1,21 @@
 <template>
   <div id="app">
     <hello></hello>
-    <world></world>
+    <div>div label</div>
   </div>
 </template>
 
 <script>
   import hello from './components/hello';
-  import world from './components/world';
   export default {
     data () {
       return {
-        a: 123
+        mark: 'app'
       }
     },
 
     components: {
-      hello,
-      world
-    },
-
-    created () {
-      
-    },
-
-    mounted () {
-      
+      hello
     }
   }
 </script>
