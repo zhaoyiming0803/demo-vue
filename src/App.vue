@@ -1,23 +1,21 @@
 <template>
-  <div id="app">
-    <hello></hello>
-    <world></world>
+  <div>
+    <div>{{activityTab}}</div>
+    <tabs v-model="activityTab"></tabs>
   </div>
 </template>
 
 <script>
-  import hello from './components/hello';
-  import world from './components/world';
+  import tabs from './components/tabs'
   export default {
     data () {
       return {
-        a: 123
+        activityTab: 3
       }
     },
 
     components: {
-      hello,
-      world
+      tabs
     },
 
     created () {
