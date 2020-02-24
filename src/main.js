@@ -41,25 +41,24 @@ window.vm = new Vue({
   //   )
   // }
 
-  // render (createElement) {
-  //   const _this = this;
-  //   return createElement('div', [
-  //     createElement('div', {
-  //       style: {
-  //         color: 'red'
-  //       },
-  //       on: {
-  //         click: () => {
-  //           console.log(this);
-  //         }
-  //       }
-  //     }, this.a),
-  //     createElement('div', {
-  //       style: {
-  //         color: 'blue'
-  //       }
-  //     }, '2')
-  //   ]);
-  // }
-  render: h => h(App)
+  render (createElement) {
+    const _this = this;
+    return createElement('div', [
+      createElement('div', {
+        style: {
+          color: 'red'
+        },
+        on: {
+          click: () => {
+            console.log(this);
+          }
+        }
+      }, this.a),
+      createElement('div', {
+        style: {
+          color: 'blue'
+        }
+      }, '2')
+    ]);
+  }
 })

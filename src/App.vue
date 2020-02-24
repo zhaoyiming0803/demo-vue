@@ -1,29 +1,21 @@
 <template>
-  <div>
-    <div>{{activityTab}}</div>
-    <tabs v-model="activityTab"></tabs>
+  <div id="app">
+    <hello></hello>
+    <div>div label</div>
   </div>
 </template>
 
 <script>
-  import tabs from './components/tabs'
+  import hello from './components/hello';
   export default {
     data () {
       return {
-        activityTab: 3
+        mark: 'app'
       }
     },
 
     components: {
-      tabs
-    },
-
-    created () {
-      
-    },
-
-    mounted () {
-      
+      hello
     }
   }
 </script>
