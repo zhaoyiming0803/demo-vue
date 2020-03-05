@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <hello></hello>
-    <div>div label</div>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -28,5 +28,7 @@
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  height: 2000px;
 }
+
 </style>

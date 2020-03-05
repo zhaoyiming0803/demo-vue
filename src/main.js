@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import { create } from 'domain';
-
+import router from './router/index'
 Vue.config.productionTip = false
 
 window.Vue = Vue;
@@ -16,6 +16,8 @@ window.vm = new Vue({
       a: 'aaa'
     }
   },
+  router,
+  render: h => h(App)
   // components: {
   //   abc: {
   //     render: (createElement) => {
@@ -41,24 +43,24 @@ window.vm = new Vue({
   //   )
   // }
 
-  render (createElement) {
-    const _this = this;
-    return createElement('div', [
-      createElement('div', {
-        style: {
-          color: 'red'
-        },
-        on: {
-          click: () => {
-            console.log(this);
-          }
-        }
-      }, this.a),
-      createElement('div', {
-        style: {
-          color: 'blue'
-        }
-      }, '2')
-    ]);
-  }
+  // render (createElement) {
+  //   const _this = this;
+  //   return createElement('div', [
+  //     createElement('div', {
+  //       style: {
+  //         color: 'red'
+  //       },
+  //       on: {
+  //         click: () => {
+  //           console.log(this);
+  //         }
+  //       }
+  //     }, this.a),
+  //     createElement('div', {
+  //       style: {
+  //         color: 'blue'
+  //       }
+  //     }, '2')
+  //   ]);
+  // }
 })
