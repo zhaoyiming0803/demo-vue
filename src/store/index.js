@@ -22,6 +22,7 @@ export default new Vuex.Store({
       // setTimeout(() => {
       //   store.abc = value
       // }, 1000)
+      console.log('global module this: ', this)
       store.abc = value
     }
   },
