@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <hello></hello>
+    <div @click="changeAbc">abc in store: {{$store.state.abc}}</div>
     <router-view></router-view>
   </div>
 </template>
@@ -16,6 +17,16 @@
 
     components: {
       hello
+    },
+
+    mounted () {
+      console.log(this.$store)
+    },
+
+    methods: {
+      changeAbc () {
+        this.$store.commit('changeAbc', Math.random())
+      }
     }
   }
 </script>

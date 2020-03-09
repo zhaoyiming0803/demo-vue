@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import { create } from 'domain';
 import router from './router/index'
+import store from './store'
 Vue.config.productionTip = false
 
 window.Vue = Vue;
@@ -17,6 +18,7 @@ window.vm = new Vue({
     }
   },
   router,
+  store,
   render: h => h(App)
   // components: {
   //   abc: {
