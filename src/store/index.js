@@ -10,12 +10,14 @@ window.Vuex = Vuex
 
 export default new Vuex.Store({
   // 启用严格模式，在mutations中异步修改state时，控制台会报警告
+  // 原因参考 store._withCommit 方法
+  // this._committing === false，说明是在mutations中异步修改state
   strict: process.env.NODE_ENV !== 'production',
   state: {
     abc: 123
   },
   // mutations 中不能写异步代码的原因是：
-  // 1：mutations中异步修改某个值，不能及时反映到vuex开发者工具上，在严格模式下会报错。原因参谋 store._withCommit 方法
+  // 1：mutations中异步修改某个值，不能及时反映到vuex开发者工具上，在严格模式下会报错。原因参考 store._withCommit 方法
   // 2：最好遵循单向数据流的开发规范：在 template 中触发 actions，actions异步获取到数据通过commit执行mutation，mutation中修改值之后反应到state中，然后再促使view层发生变化
   mutations: {
     changeAbc (store, value) {
