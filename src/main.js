@@ -6,9 +6,14 @@ import { create } from "domain";
 import router from "./router/index";
 import store from "./store";
 import Alert from "./components/Alert";
+import printPlugin from "./plugins/print";
 Vue.config.productionTip = false;
 
 Vue.prototype.Alert = Alert;
+Vue.use(printPlugin, {
+  a: 1,
+  b: 2
+});
 
 window.Vue = Vue;
 
